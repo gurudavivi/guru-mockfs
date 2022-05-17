@@ -6,12 +6,17 @@
 
 # CMD='remove -D jest @types/jest ts-jest'
 # CMD='add -D jest@^27.5.1 @types/jest ts-jest@27.0.0'
+# CMD='add -D @commext/tsconfig @commext/eslint-config'
 
-CMD='add -D @guru/tsconfig @guru/eslint-config'
+# CMD='add commander lodash chalk@4'
+CMD='add -D typescript'
 
+# CMD='remove ts-node typedoc'
+# CMD='exec typesync'
 
-pnpm --filter ./packages/box -r $CMD
-pnpm --filter ./packages/table -r $CMD
+pnpm --filter ./packages/term -r $CMD
+pnpm --filter ./packages/options -r $CMD
+pnpm --filter ./packages/option-parser -r $CMD
 
 
 # pnpm --filter ./packages/term -r --if-present $CMD

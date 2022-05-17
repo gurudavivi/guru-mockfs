@@ -1,21 +1,10 @@
 {
-  "name": "@guru/tsconfig",
+  "name": "@commext/tsconfig",
   "version": "0.0.0",
-  "description": "typeScript configuration",
-  "license": "private",
+  "description": "typescript configuration",
+  "license": "MIT",
+  "private": "true",
   "author": "Viviane Florido @vivianeflowt",
   "main": "tsconfig.json",
-  "scripts": {
-    "commit": "cz"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "devDependencies": {
-    "@guru/eslint-config": "workspace:^0.0.0",
-    "rimraf": "^3.0.2",
-    "typesync": "^0.9.1"
-  }
+  "devDependencies": {}
 }

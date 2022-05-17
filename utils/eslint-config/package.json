@@ -1,39 +1,27 @@
 {
-  "name": "@guru/eslint-config",
+  "name": "@commext/eslint-config",
   "version": "0.0.0",
   "description": "eslint configuration",
   "license": "private",
+  "private": "true",
   "author": "Viviane Florido @vivianeflowt",
   "main": "index.js",
   "engines": {
     "node": ">=10"
   },
-  "scripts": {
-    "commit": "cz"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "@types/eslint": "^8.4.2",
     "@types/eslint-plugin-prettier": "^3.1.0",
-    "@types/prettier": "^2.6.0",
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
-    "@typescript-eslint/parser": "^5.23.0",
+    "@types/prettier": "^2.6.1",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-xo": "^0.40.0",
-    "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-jest": "^26.2.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.6.2"
-  },
-  "devDependencies": {
-    "@guru/tsconfig": "workspace:^0.0.0",
-    "rimraf": "^3.0.2",
-    "typescript": "4.6.4",
-    "typesync": "^0.9.1"
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
   }
 }

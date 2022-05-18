@@ -1,5 +1,5 @@
 {
-  "name": "@commext/release",
+  "name": "@utils/release",
   "version": "0.0.0",
   "description": "release configuration",
   "license": "MIT",
@@ -18,9 +18,10 @@
     }
   },
   "devDependencies": {
-    "@commext/eslint-config": "workspace:^0.0.0",
-    "@commext/tsconfig": "workspace:^0.0.0",
     "@types/rimraf": "^3.0.2",
+    "@utils/eslint-config": "workspace:^0.0.0",
+    "@utils/tsconfig": "workspace:^0.0.0",
+    "eslint": "^8.15.0",
     "release-it": "^15.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.4"

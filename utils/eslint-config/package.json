@@ -1,5 +1,5 @@
 {
-  "name": "@commext/eslint-config",
+  "name": "@utils/eslint-config",
   "version": "0.0.0",
   "description": "eslint configuration",
   "license": "private",

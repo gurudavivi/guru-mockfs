@@ -1,4 +1,4 @@
 {
     "root": true,
-    "extends": "@commext/eslint-config"
+    "extends": "@utils/eslint-config"
 }

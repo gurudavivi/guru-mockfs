@@ -21,7 +21,7 @@
     "preinstall": "npx only-allow pnpm",
     "microbundle": "microbundle --help",
     "release": "release-it --verbose -c ./utils/release/.release-it.js --dry-run",
-    "reset": "./scripts/reset.sh",
+    "reset": "ultra ./scripts/reset.sh",
     "share": "./scripts/share.sh",
     "test": "pnpm test --recursive --stream --if-present",
     "typesync": "typesync",

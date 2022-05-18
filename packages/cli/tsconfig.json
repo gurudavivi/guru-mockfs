@@ -1,17 +1,14 @@
 {
   "extends": "@utils/tsconfig",
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
+    "sourceMap": false,
     "declaration": true,
-    "declarationDir": "lib/@types"
+    "declarationDir": "lib/@types",
+    "outDir": "lib",
+    "rootDir": "src"
   },
   "include": [
     "src/**/*.ts",
     "../../typings/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
+  ]
 }

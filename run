@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# export PATH=$PATH:/media/viviane/MYAPPS/gurudavivi/@guru-cli/guru-cli/bin
+
+# node -r esbuild-register ./src/index.ts $@
+
+# CMD='remove -D jest @types/jest ts-jest'
+ CMD='add -D jest@^27.5.1 @types/jest ts-jest@27.0.0'
+
+# --if-present
+
+# pnpm --filter ./packages/app -r $CMD
+# pnpm --filter ./packages/auth -r $CMD
+
+# pnpm -w $CMD
+
+# CMD="run build"
+# # CMD="run test"
+
+# pnpm --filter ./packages/term -r --if-present $CMD
+# pnpm --filter ./packages/term -r --if-present $CMD
+# pnpm --filter ./packages/term -r --if-present $CMD
+
+
+
+# pnpm add -w -D jest @types/jest ts-jest @types/node ts-node
+
+
+pnpm --filter ./packages -r -p exec pnpm pack  

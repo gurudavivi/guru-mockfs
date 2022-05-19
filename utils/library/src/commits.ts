@@ -42,9 +42,9 @@ const cycle = async () => {
     }),
   ])
 
-  await execute(`git add . && git commit -m '${Date.now()}'`).then((res) =>
-    log(res)
-  )
+  //   await execute(`git add . && git commit -m '${Date.now()}'`).then((res) =>
+  //     log(res)
+  //   )
   //   await execute(`git push`).then((res) => log(res))
 
   //   await execute(`rm -rf ${DIR}`).then((res) => log(res))
@@ -52,10 +52,6 @@ const cycle = async () => {
 
 const exec22 = async () => {
   //
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
   await cycle()
 }
 

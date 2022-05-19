@@ -12,12 +12,10 @@ do
     git add .
     git commit -m "step $i"
     echo "  "
-    sleep 1
-
 
     echo "  "
     git push -f
-    sleep 1
+    wait
 
     echo "  "
     echo "  "

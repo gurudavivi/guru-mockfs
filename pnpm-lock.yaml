@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@faker-js/faker': ^6.3.1
       '@types/eslint': ^8.4.2
       '@types/jest': ^27.5.1
       '@types/prettier': ^2.6.1
@@ -30,6 +31,7 @@ importers:
       ultra: ^0.7.2
       update-ts-references: ^2.4.1
     dependencies:
+      '@faker-js/faker': 6.3.1
       concurrently: 7.2.0
       ultra: 0.7.2
     devDependencies:
@@ -1636,6 +1638,11 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+
+  /@faker-js/faker/6.3.1:
+    resolution: {integrity: sha512-8YXBE2ZcU/pImVOHX7MWrSR/X5up7t6rPWZlk34RwZEcdr3ua6X+32pSd6XuOQRN+vbuvYNfA6iey8NbrjuMFQ==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: false
 
   /@formatjs/cli/2.15.0:
     resolution: {integrity: sha512-Hv7Z3xeGcgTpn1jA1/x7tc9UYbF9Udn/77xRf7E22Vn1mGJM/DftVqnpgLeNpd0d3xSftYw+rhaShNO19BsT6A==}

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import chalk from 'chalk'
 import { exec } from 'child_process'
-import { randomBytes } from 'crypto'
+import { randomBytes, randomInt } from 'crypto'
 import fs from 'fs'
 import f from 'lodash/fp'
 import path from 'path'
@@ -33,10 +33,10 @@ const cycle = async () => {
   fs.existsSync(DIR) || fs.mkdirSync(DIR)
 
   await Promise.all([
-    ...[...f.range(0, 10)].map(async () => {
+    ...[...f.range(1, randomInt(21))].map(async () => {
       return fs.promises.writeFile(
         path.join(DIR, Date.now().toString()),
-        randomBytes(1024 * 100).toString('hex'),
+        randomBytes(1024 * randomInt(100)).toString('hex'),
         'utf8'
       )
     }),

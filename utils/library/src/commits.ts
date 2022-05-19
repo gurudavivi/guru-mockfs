@@ -50,4 +50,25 @@ const cycle = async () => {
   //   await execute(`rm -rf ${DIR}`).then((res) => log(res))
 }
 
-cycle()
+const exec22 = async () => {
+  //
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+  await cycle()
+}
+
+exec22()

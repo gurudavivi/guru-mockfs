@@ -13,15 +13,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
 const console_1 = require("console");
 const fp_1 = require("lodash/fp");
-const option_debug_1 = require("./option-debug");
-const option_verbosity_1 = require("./option-verbosity");
-const program = new commander_1.Command('guru');
-(0, fp_1.pipe)(option_verbosity_1.optionVerbosity, (0, option_verbosity_1.optionVerbose)(), (0, option_verbosity_1.optionQuiet)(), (0, option_verbosity_1.optionSilent)(), option_debug_1.optionDebug)(program);
+const option_verbosity_1 = require("./options/option-verbosity");
+const program = new commander_1.Command('repo');
+(0, fp_1.pipe)(option_verbosity_1.optionVerbosity, (0, option_verbosity_1.optionVerbose)(), (0, option_verbosity_1.optionQuiet)(), (0, option_verbosity_1.optionSilent)())(program);
 program
-    .name('guru')
+    .name('repo')
     .description(require('../package').description)
     .version(require('../package').version)
-    .argument('[directory]', 'directory')
     // .option('-v, --verbose', 'verbose')
     // .option('-s, --silent', 'verbose')
     // .option('-q, --quiet', 'verbose')
@@ -29,7 +27,7 @@ program
     .option('-l, --list [value...]', 'list of value')
     .option('-i, --interactive', 'interactive', false)
     .action(() => __awaiter(void 0, void 0, void 0, function* () {
-    // log(program.opts())
+    (0, console_1.log)(program.opts());
     // program.error('ddd')
     // program.help()
 }));

@@ -1,2 +1,4 @@
+#!/usr/bin/env node
 "use strict";
-console.log('test');
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./bin");

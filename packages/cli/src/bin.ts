@@ -9,17 +9,16 @@ import {
   optionSilent,
   optionVerbose,
   optionVerbosity,
-} from './option-verbosity'
+} from './options/option-verbosity'
 
-const program = new Command('guru')
+const program = new Command('repo')
 
 pipe(optionVerbosity, optionVerbose(), optionQuiet(), optionSilent())(program)
 
 program
-  .name('guru')
+  .name('repo')
   .description(require('../package').description)
   .version(require('../package').version)
-  .argument('[directory]', 'directory')
   // .option('-v, --verbose', 'verbose')
   // .option('-s, --silent', 'verbose')
   // .option('-q, --quiet', 'verbose')

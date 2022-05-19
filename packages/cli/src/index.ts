@@ -1,1 +1,2 @@
-console.log('test')
+#!/usr/bin/env node
+import './bin'

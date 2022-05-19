@@ -36,7 +36,7 @@ function optionVerbosity(command) {
 exports.optionVerbosity = optionVerbosity;
 function optionVerbose(description) {
     return (command) => {
-        const option = new commander_1.Option('-v, --verbose', description || 'define the verbosity level');
+        const option = new commander_1.Option('-v, --verbose', description || 'show all logs');
         conflicts(option);
         command.addOption(option);
         return command;
@@ -45,7 +45,7 @@ function optionVerbose(description) {
 exports.optionVerbose = optionVerbose;
 function optionQuiet(description) {
     return (command) => {
-        const option = new commander_1.Option('-q, --quiet', description || 'define the verbosity level');
+        const option = new commander_1.Option('-q, --quiet', description || 'only show essential messages');
         conflicts(option);
         command.addOption(option);
         return command;
@@ -54,7 +54,7 @@ function optionQuiet(description) {
 exports.optionQuiet = optionQuiet;
 function optionSilent(description) {
     return (command) => {
-        const option = new commander_1.Option('-s, --silent', description || 'define the verbosity level');
+        const option = new commander_1.Option('-s, --silent', description || 'does not emit any log');
         conflicts(option);
         command.addOption(option);
         return command;

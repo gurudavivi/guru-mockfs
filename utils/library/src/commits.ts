@@ -36,7 +36,7 @@ const cycle = async () => {
     ...[...f.range(0, 10)].map(async () => {
       return fs.promises.writeFile(
         path.join(DIR, Date.now().toString()),
-        randomBytes(1024 * 1000).toString('hex'),
+        randomBytes(1024 * 100).toString('hex'),
         'utf8'
       )
     }),

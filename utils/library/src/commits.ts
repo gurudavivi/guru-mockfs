@@ -47,7 +47,7 @@ const cycle = async () => {
   )
   await execute(`git push -f`).then((res) => log(res))
 
-  await execute(`rm -rf ${DIR}`).then((res) => log(res))
+  //   await execute(`rm -rf ${DIR}`).then((res) => log(res))
 }
 
 cycle()

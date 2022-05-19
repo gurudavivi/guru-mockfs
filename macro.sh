@@ -6,7 +6,7 @@ clear
 for i in {1..100}
 do
     ts-node utils/library/src/commits.ts
-    sleep 2
+    sleep 1
 
     echo "  "
     git add .
@@ -24,9 +24,10 @@ do
     echo "Welcome $i times"
     echo "  "
     echo "  "
-    sleep 2
+    sleep 1
 
     rm -rf ./data
-    sleep 2
+    wait
+    sleep 1
 done
 

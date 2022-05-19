@@ -57,18 +57,6 @@ const exec22 = async () => {
   await cycle()
   await cycle()
   await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
-  await cycle()
 }
 
 exec22()

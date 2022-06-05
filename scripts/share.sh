@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# pnpm install -w --force
-# pnpm install -r --force
-# pnpm fix
-pnpm run build
+clear
 
-pnpm -r -p exec pnpm pack --pack-destination /media/vivi/gurudavivi/GURU-CLI/packages/data
+NAME='func'
 
-wait
-# rm -r /home/vivi/.guru/*.tgz
+npm remove -g --force "$NAME"
+npm list -g --depth 0 | grep "$NAME" 
+sleep 2
 
-wait
-echo " "
-echo "cp ./**/*.tgz /home/vivi/.guru"
-echo " "
+npm link
+
+npm install -g . --force
+npm list -g --depth 0 | grep "$NAME"
+sleep 2
+
+

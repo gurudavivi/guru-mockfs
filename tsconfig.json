@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "strict": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "dist",
+        "rootDir": "src",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": false,
+        "target": "es2020",
+        "types": [
+            "node"
+        ]
+    },
+    "files": [
+        "src/types/global.d.ts"
+    ],
+    "include": [
+        "src",
+    ],
+    "exclude": [
+        "*.test.ts",
+        "*.test.tsx",
+        "*.spec.ts",
+        "*.spec.tsx"
+    ],
+    "typedocOptions": {
+        "entryPoints": [
+            "src"
+        ],
+        "out": "docs"
+    },
+    "ts-node": {
+        "moduleTypes": {
+            "jest.config.ts": "cjs"
+        }
+    },
+}

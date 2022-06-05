@@ -1,5 +1,0 @@
-#!/bin/bash
-
-node ./packages/cli/lib/index.js $@
-
-

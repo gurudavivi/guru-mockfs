@@ -1,36 +1,55 @@
 {
-  "name": "root",
-  "version": "0.0.0",
-  "private": "true",
+  "name": "mockdir",
+  "version": "0.0.2",
+  "description": "mockdir",
+  "license": "MIT",
+  "author": {
+    "name": "Viviane Florido @vivianeflowt",
+    "email": "vivianeflowt@gmail.com"
+  },
+  "repository": "https://github.com/vivianeflowt/jest-mocks",
+  "homepage": "https://github.com/vivianeflowt/jest-mocks",
+  "bugs": "https://github.com/vivianeflowt/jest-mocks/issues",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "directories": {
+    "test": "test",
+    "dist": "dist"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "engines": {
-    "node": ">=12.6",
-    "pnpm": ">=6.14.1"
+    "node": ">=10.0.0"
   },
   "scripts": {
-    "bootstrap": "ultra -r -w pnpm install",
-    "build": "ultra --recursive --build",
-    "bundle": "ultra --recursive bundle",
-    "clean": "ultra -r -w pnpm exec -- rimraf node_modules; rimraf dist; rimraf lib",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "clean": "npx rimraf dist coverage",
     "commit": "cz",
-    "depcheck": "ultra -r -w npx depcheck",
-    "fix": "ultra -r -w syncpack format; syncpack fix-mismatches; pnpm run format; pnpm run lint",
-    "format": "ultra -r syncpack format; prettier --write **/src/**/*.ts",
-    "lint": "ultra -r syncpack format; eslint **/src/**/*.ts --fix --quiet",
-    "monitor": "ultra --monitor",
-    "syncpack": "syncpack list-mismatches",
-    "preinstall": "npx only-allow pnpm",
-    "microbundle": "microbundle --help",
-    "release": "release-it --verbose -c ./utils/release/.release-it.js --dry-run",
-    "reset": "ultra ./scripts/reset.sh",
-    "share": "./scripts/share.sh",
-    "test": "pnpm test --recursive --stream --if-present",
+    "depcheck": "npx depcheck",
+    "fix": "pnpm run format && pnpm run lint:fix",
+    "format": "syncpack format && prettier --write **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "release": "release-it --config scripts/.release-it.json --verbose --dry-run",
+    "reset": "rimraf ./node_modules && rimraf dist && pnpm install && ./scripts/check.sh",
+    "reset-hard": "git clean -dfx && git reset --hard && pnpm run reset",
+    "test": "jest --logHeapUsage",
+    "test:clear": "jest --clearCache",
+    "test:cov": "jest --runInBand --coverage",
+    "test:watch": "jest --runInBand --watch",
     "typesync": "typesync",
-    "watch:bundle": "pnpm -r --if-present --stream -p run watch:bundle",
-    "watch:dev": "pnpm -r --if-present --stream -p run watch"
+    "validate": "npx package-json-validator --recommendations && npx validate-npm-package",
+    "watch": "tsc --watch"
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "parser": "typescript",
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -46,33 +65,52 @@
     }
   },
   "dependencies": {
-    "@faker-js/faker": "^6.3.1",
-    "concurrently": "^7.2.0",
-    "ultra": "^0.7.2"
+    "bluebird": "^3.7.2",
+    "fast-glob": "^3.2.11",
+    "flat": "^5.0.2",
+    "lodash": "^4.17.21",
+    "micromatch": "^4.0.5",
+    "reflect": "^0.1.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.1.2",
+    "@types/bluebird": "^3.5.36",
     "@types/eslint": "^8.4.2",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/flat": "^5.0.2",
     "@types/jest": "^27.5.1",
+    "@types/lodash": "^4.14.182",
+    "@types/micromatch": "^4.0.2",
+    "@types/node": "^17.0.35",
     "@types/prettier": "^2.6.1",
     "@types/rimraf": "^3.0.2",
-    "@types/supertest": "^2.0.12",
-    "@utils/eslint-config": "workspace:^0.0.0",
-    "@utils/tsconfig": "workspace:^0.0.0",
-    "@vercel/ncc": "^0.33.4",
+    "@types/semantic-release": "^17.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "auto-changelog": "^2.4.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-xo": "^0.40.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "jest": "^28.1.0",
+    "jest-date-mock": "^1.0.8",
+    "jest-extended": "^2.0.0",
     "lint-staged": "^12.4.1",
-    "microbundle": "^0.15.0",
     "prettier": "^2.6.2",
     "release-it": "^15.0.0",
     "rimraf": "^3.0.2",
-    "supertest": "^6.2.3",
+    "semantic-release": "^19.0.2",
     "syncpack": "^7.2.1",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
+    "ts-toolbelt": "^9.6.0",
     "tslib": "^2.4.0",
+    "type-fest": "^2.12.2",
     "typescript": "^4.6.4",
-    "typesync": "^0.9.1",
-    "update-ts-references": "^2.4.1"
+    "typesync": "^0.9.1"
   }
 }

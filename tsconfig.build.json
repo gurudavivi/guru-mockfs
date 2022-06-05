@@ -1,0 +1,22 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": false
+    },
+    "include": [
+        "src",
+    ],
+    "exclude": [
+        "**__tests__/**",
+        "**__mocks__/**",
+        "**__fixtures__/**",
+        "**/*.test.ts",
+        "**/*.spec.ts",
+    ],
+    "typedocOptions": {
+        "entryPoints": [
+            "src"
+        ],
+        "out": "docs"
+    }
+}

@@ -2,8 +2,6 @@
 
 clear
 
-
-
 git add .
 git commit -m "step"
-git push -f
+git push
